@@ -1,3 +1,5 @@
+Copilot said: ```html <!doctype html> <html lang="zh-CN"> <head> <meta charset="utf-8" />
+HTML
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -8,18 +10,23 @@
 
   <style>
     :root{
-      --bg: #0b1220;
-      --panel: rgba(255,255,255,0.06);
-      --panel2: rgba(255,255,255,0.08);
-      --text: rgba(255,255,255,0.88);
-      --muted: rgba(255,255,255,0.68);
-      --faint: rgba(255,255,255,0.45);
-      --brand: #7c5cff;
-      --brand2:#22c55e;
-      --line: rgba(255,255,255,0.12);
-      --shadow: 0 18px 60px rgba(0,0,0,0.45);
+      /* Light academic theme */
+      --bg0: #f7f9ff;
+      --bg1: #ffffff;
+
+      --text: rgba(15,23,42,0.92);
+      --muted: rgba(15,23,42,0.68);
+      --faint: rgba(15,23,42,0.45);
+
+      --brand: #5b7cfa;   /* blue */
+      --brand2:#8b5cf6;   /* purple */
+
+      --line: rgba(15,23,42,0.10);
+      --shadow: 0 14px 40px rgba(15,23,42,0.10);
+
       --radius: 18px;
       --radius2: 14px;
+
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -32,10 +39,9 @@
       font-family: var(--sans);
       color: var(--text);
       background:
-        radial-gradient(900px 450px at 15% 10%, rgba(124,92,255,0.32), transparent 55%),
-        radial-gradient(900px 450px at 85% 5%, rgba(34,197,94,0.18), transparent 55%),
-        radial-gradient(800px 500px at 50% 90%, rgba(56,189,248,0.10), transparent 60%),
-        linear-gradient(180deg, #070b14 0%, #0b1220 50%, #070b14 100%);
+        radial-gradient(900px 450px at 15% 10%, rgba(91,124,250,0.18), transparent 55%),
+        radial-gradient(900px 450px at 85% 5%, rgba(139,92,246,0.14), transparent 55%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 60%, var(--bg0) 100%);
       line-height: 1.6;
     }
 
@@ -51,8 +57,9 @@
     /* top header */
     .hero{
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      background: rgba(255,255,255,0.78);
       box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
       border-radius: var(--radius);
       padding: 34px 28px;
       position: relative;
@@ -62,8 +69,8 @@
       content:"";
       position:absolute;
       inset:-2px;
-      background: radial-gradient(600px 240px at 30% 20%, rgba(124,92,255,0.20), transparent 70%),
-                  radial-gradient(600px 240px at 80% 20%, rgba(34,197,94,0.16), transparent 70%);
+      background: radial-gradient(600px 240px at 30% 20%, rgba(91,124,250,0.18), transparent 70%),
+                  radial-gradient(600px 240px at 80% 20%, rgba(139,92,246,0.14), transparent 70%);
       pointer-events:none;
       filter: blur(0px);
     }
@@ -75,7 +82,7 @@
       padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.75);
       font-size: 13px;
       color: var(--muted);
       position: relative;
@@ -83,8 +90,8 @@
     }
     .dot{
       width: 10px; height: 10px; border-radius: 999px;
-      background: linear-gradient(135deg, var(--brand), #38bdf8);
-      box-shadow: 0 0 0 4px rgba(124,92,255,0.16);
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 4px rgba(91,124,250,0.16);
     }
 
     h1{
@@ -116,29 +123,24 @@
     }
     .author{
       padding: 6px 10px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.90);
       border: 1px solid var(--line);
       border-radius: 999px;
       font-size: 14px;
       color: var(--text);
-    }
-    .aff{
-      margin-top: 14px;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
-      font-size: 14px;
+      box-shadow: 0 10px 22px rgba(15,23,42,0.06);
     }
 
     .note-authors{
       margin-top: 10px;
-      color: rgba(255,255,255,0.65);
+      color: var(--muted);
       font-size: 13px;
       position: relative;
       z-index: 1;
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+      align-items: center;
     }
     .note-authors .mark{
       display: inline-flex;
@@ -148,11 +150,22 @@
       height: 18px;
       margin-right: 6px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.06);
-      font-weight: 700;
-      color: rgba(255,255,255,0.82);
+      border: 1px solid rgba(15,23,42,0.14);
+      background: rgba(255,255,255,0.90);
+      font-weight: 800;
+      color: rgba(15,23,42,0.82);
+      font-family: var(--mono);
+      box-shadow: 0 8px 16px rgba(15,23,42,0.06);
     }
+
+    .aff{
+      margin-top: 14px;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
+    }
+
     .btns{
       margin-top: 22px;
       display: flex;
@@ -168,25 +181,36 @@
       padding: 10px 14px;
       border-radius: 12px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.92);
       color: var(--text);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 14px;
-      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      box-shadow: 0 10px 22px rgba(15,23,42,0.08);
+      transition: transform .08s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
       text-decoration: none;
     }
-    .btn:hover{ background: rgba(255,255,255,0.10); transform: translateY(-1px); text-decoration: none; }
+    .btn:hover{
+      background: rgba(255,255,255,0.98);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(15,23,42,0.12);
+      border-color: rgba(91,124,250,0.35);
+      text-decoration: none;
+    }
     .btn.primary{
-      background: linear-gradient(135deg, rgba(124,92,255,0.95), rgba(56,189,248,0.70));
-      border-color: rgba(124,92,255,0.45);
-      color: #081022;
+      background: linear-gradient(135deg, rgba(91,124,250,0.95), rgba(139,92,246,0.92));
+      border-color: rgba(91,124,250,0.25);
+      color: #ffffff;
     }
     .btn.good{
-      background: linear-gradient(135deg, rgba(34,197,94,0.95), rgba(16,185,129,0.65));
-      border-color: rgba(34,197,94,0.45);
-      color: #07120c;
+      background: linear-gradient(135deg, rgba(34,197,94,0.92), rgba(16,185,129,0.82));
+      border-color: rgba(16,185,129,0.25);
+      color: #ffffff;
     }
-    .btn .icon{ font-family: var(--mono); opacity: 0.9; }
+    .btn .icon{
+      font-family: var(--mono);
+      opacity: 0.95;
+      letter-spacing: 0.02em;
+    }
 
     /* sections */
     .grid{
@@ -201,9 +225,10 @@
 
     .card{
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.78);
       border-radius: var(--radius);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
       padding: 18px 18px;
     }
     .card h2{
@@ -211,7 +236,7 @@
       font-size: 16px;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.78);
+      color: rgba(15,23,42,0.78);
     }
     .card p{
       margin: 0 0 10px;
@@ -223,7 +248,7 @@
       width: 100%;
       border-radius: 14px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.70);
       overflow: hidden;
       aspect-ratio: 16/9;
       display:flex;
@@ -249,9 +274,9 @@
       padding: 12px 12px;
       border-radius: 14px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.85);
     }
-    .li b{ color: rgba(255,255,255,0.88); }
+    .li b{ color: rgba(15,23,42,0.92); }
     .li span{ color: var(--muted); }
 
     .code{
@@ -259,10 +284,10 @@
       padding: 12px 14px;
       border-radius: 14px;
       border: 1px solid var(--line);
-      background: rgba(0,0,0,0.35);
+      background: rgba(15,23,42,0.04);
       font-family: var(--mono);
       font-size: 13px;
-      color: rgba(255,255,255,0.78);
+      color: rgba(15,23,42,0.78);
       overflow-x: auto;
       white-space: pre;
     }
@@ -349,7 +374,7 @@
           <!-- <img src="assets/teaser.png" alt="HTNav teaser figure"> -->
           <div style="padding: 20px; text-align:center;">
             Put your teaser figure here<br/>
-            <span style="color: rgba(255,255,255,0.45); font-size: 13px;">
+            <span style="color: rgba(15,23,42,0.45); font-size: 13px;">
               (e.g., assets/teaser.png)
             </span>
           </div>
@@ -371,7 +396,7 @@
 
     <section class="card" style="margin-top:16px;">
       <h2>BibTeX</h2>
-      
+
       <div class="code">@article{htnav2026,
   title   = {HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation},
   author  = {Fan, Chengjie and Pan, Cong and Liu, Zijian and Liu, Ningzhong and Qin, Jie},
