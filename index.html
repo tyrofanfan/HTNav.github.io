@@ -130,6 +130,29 @@
       font-size: 14px;
     }
 
+    .note-authors{
+      margin-top: 10px;
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .note-authors .mark{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      font-weight: 700;
+      color: rgba(255,255,255,0.82);
+    }
     .btns{
       margin-top: 22px;
       display: flex;
@@ -262,12 +285,12 @@
 <body>
   <div class="wrap">
     <header class="hero">
-      <div class="badge"><span class="dot"></span> Urban Aerial Vision-and-Language Navigation</div>
+      <div class="badge"><span class="dot"></span> Aerial Vision-and-Language Navigation</div>
 
       <h1>HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation</h1>
 
       <p class="subtitle">
-        A collaborative IL-RL framework with tiered decision-making and map representation learning for robust urban aerial VLN.
+        CVPR 2026
       </p>
 
       <div class="authors" aria-label="authors">
@@ -278,7 +301,10 @@
         <div class="author">Ningzhong Liu</div>
         <div class="author">Jie Qin †</div>
       </div>
-
+      <div class="note-authors">
+        <span class="mark">*</span> denotes equal contribution.
+        <span class="mark">†</span> denotes corresponding author.
+      </div>
       <div class="aff">
         <div>Nanjing University of Aeronautics and Astronautics, China</div>
         <div>Key Laboratory of Brain-Machine Intelligence Technology, Ministry of Education, China</div>
