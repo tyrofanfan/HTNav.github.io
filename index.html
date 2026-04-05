@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -80,14 +80,7 @@
     .hero-inner{
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(290px, 0.8fr);
-      gap: 24px;
-      align-items: start;
-    }
-
-    @media (max-width: 920px){
-      .hero-inner{ grid-template-columns: 1fr; }
+      display: block;
     }
 
     .badge{
@@ -222,85 +215,6 @@
       letter-spacing: 0.02em;
     }
 
-    .panel{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.70);
-      border-radius: 24px;
-      padding: 18px;
-      box-shadow: 0 14px 30px rgba(20,24,33,0.06);
-    }
-
-    .panel-title{
-      margin: 0 0 12px;
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(20,24,33,0.62);
-    }
-
-    .panel-grid{
-      display: grid;
-      gap: 12px;
-    }
-
-    .panel-item{
-      padding: 14px 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(20,24,33,0.08);
-      background: rgba(255,255,255,0.88);
-    }
-
-    .panel-item .kicker{
-      display: block;
-      color: var(--faint);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 4px;
-    }
-
-    .panel-item strong{
-      display: block;
-      font-size: 15px;
-      margin-bottom: 2px;
-    }
-
-    .panel-item p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 13.5px;
-    }
-
-    .visit-box{
-      margin-top: 14px;
-      padding: 14px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(19,78,74,0.08), rgba(37,99,235,0.05));
-      border: 1px solid rgba(19,78,74,0.10);
-    }
-
-    .visit-box .label{
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 6px;
-    }
-
-    .visit-box .url{
-      font-family: var(--mono);
-      font-size: 13px;
-      word-break: break-all;
-      color: rgba(20,24,33,0.88);
-    }
-
-    .visit-box .help{
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* sections */
     .grid{
       margin-top: 20px;
       display: grid;
@@ -405,7 +319,7 @@
           <h1>HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation</h1>
 
           <p class="subtitle">
-            一个更清晰的论文主页版本，重点突出标题、作者、访问入口和浏览方式，方便直接分享给别人打开。
+            A clean project homepage for the HTNav paper.
           </p>
 
           <div class="authors" aria-label="authors">
@@ -433,32 +347,6 @@
             </a>
           </div>
         </div>
-
-        <div class="panel" aria-label="how to visit">
-          <div class="panel-title">How to View</div>
-          <div class="panel-grid">
-            <div class="panel-item">
-              <span class="kicker">Step 1</span>
-              <strong>打开浏览器</strong>
-              <p>推荐 Chrome、Edge 或 Safari，保证页面排版和图片加载正常。</p>
-            </div>
-            <div class="panel-item">
-              <span class="kicker">Step 2</span>
-              <strong>输入网址</strong>
-              <p>把网址粘贴到地址栏，然后回车访问。</p>
-            </div>
-            <div class="visit-box">
-              <div class="label">Website URL</div>
-              <div class="url">https://tyrofanfan.github.io/HTNav.github.io/</div>
-              <div class="help">如果你是在本地预览，就直接双击打开 index.html。</div>
-            </div>
-            <div class="panel-item">
-              <span class="kicker">Step 3</span>
-              <strong>浏览页面</strong>
-              <p>向下滚动查看摘要、图示和参考信息。</p>
-            </div>
-          </div>
-        </div>
       </div>
     </header>
 
@@ -482,13 +370,10 @@
         <div class="teaser">
           <div style="padding: 20px; text-align:center;">
             Put your teaser figure here<br/>
-            <span style="color: rgba(15,23,42,0.45); font-size: 13px;">
-              (e.g., assets/teaser.png)
-            </span>
           </div>
         </div>
         <div class="hint">
-          Tip: 建议新建 <span style="font-family: var(--mono);">assets/</span> 文件夹存放图片、视频封面等资源。
+          Tip: create an <span style="font-family: var(--mono);">assets/</span> folder for images and media.
         </div>
 
         <div class="sep"></div>
@@ -497,8 +382,6 @@
         <ul class="list">
           <li class="li"><b>Project page</b><span> — this website</span></li>
           <li class="li"><b>Repository</b><span> — <a href="https://github.com/tyrofanfan/HTNav.github.io" target="_blank" rel="noreferrer">GitHub</a></span></li>
-          <li class="li"><b>Live URL</b><span> — <a href="https://tyrofanfan.github.io/HTNav.github.io/" target="_blank" rel="noreferrer">open in browser</a></span></li>
-          <li class="li"><b>Contact</b><span> — your-email@example.com</span></li>
         </ul>
       </aside>
     </section>
