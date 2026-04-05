@@ -142,10 +142,10 @@
       color: var(--muted);
       font-size: 13px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+      flex-wrap: nowrap;
+      gap: 10px;
       align-items: center;
-      max-width: 46ch;
+      white-space: nowrap;
     }
     .note-authors .mark{
       display: inline-flex;
@@ -169,7 +169,9 @@
       font-size: 14px;
       display: grid;
       gap: 4px;
-      max-width: 62ch;
+    }
+    .aff div{
+      white-space: nowrap;
     }
 
     .btns{
@@ -240,6 +242,11 @@
     }
     @media (max-width: 920px){
       .grid{ grid-template-columns: 1fr; }
+      .note-authors{
+        flex-wrap: wrap;
+        white-space: normal;
+      }
+      .aff div{ white-space: normal; }
     }
 
     .card{
@@ -345,8 +352,7 @@
             <div class="author">Jie Qin †</div>
           </div>
           <div class="note-authors">
-            <span><span class="mark">*</span> Indicates Equal Contribution.</span>
-            <span><span class="mark">†</span> Corresponding Author.</span>
+            <span><span class="mark">*</span> Indicates Equal Contribution. <span class="mark">†</span> Corresponding Author.</span>
           </div>
           <div class="aff">
             <div>Nanjing University of Aeronautics and Astronautics, China</div>
