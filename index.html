@@ -1,4 +1,3 @@
-<!doctype html> <html lang="zh-CN"> <head> <meta charset="utf-8" />
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -9,26 +8,26 @@
 
   <style>
     :root{
-      /* Light academic theme */
-      --bg0: #f7f9ff;
-      --bg1: #ffffff;
+      --bg0: #f3efe7;
+      --bg1: #faf8f2;
 
-      --text: rgba(15,23,42,0.92);
-      --muted: rgba(15,23,42,0.68);
-      --faint: rgba(15,23,42,0.45);
+      --text: rgba(20, 24, 33, 0.95);
+      --muted: rgba(20, 24, 33, 0.70);
+      --faint: rgba(20, 24, 33, 0.52);
 
-      --brand: #5b7cfa;   /* blue */
-      --brand2:#8b5cf6;   /* purple */
+      --brand: #134e4a;
+      --brand2: #d97706;
+      --accent: #2563eb;
 
-      --line: rgba(15,23,42,0.10);
-      --shadow: 0 14px 40px rgba(15,23,42,0.10);
+      --line: rgba(20, 24, 33, 0.10);
+      --shadow: 0 18px 50px rgba(20, 24, 33, 0.10);
 
-      --radius: 18px;
-      --radius2: 14px;
+      --radius: 24px;
+      --radius2: 16px;
 
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Monaco, monospace;
+      --sans: "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
     }
 
     *{ box-sizing: border-box; }
@@ -38,40 +37,57 @@
       font-family: var(--sans);
       color: var(--text);
       background:
-        radial-gradient(900px 450px at 15% 10%, rgba(91,124,250,0.18), transparent 55%),
-        radial-gradient(900px 450px at 85% 5%, rgba(139,92,246,0.14), transparent 55%),
-        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 60%, var(--bg0) 100%);
+        radial-gradient(900px 500px at 12% 12%, rgba(37,99,235,0.12), transparent 58%),
+        radial-gradient(760px 460px at 88% 8%, rgba(217,119,6,0.14), transparent 52%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 48%, #f4efe6 100%);
       line-height: 1.6;
     }
 
     a{ color: inherit; text-decoration: none; }
     a:hover{ text-decoration: underline; }
 
-    .wrap{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 48px 20px 72px;
+    ::selection{
+      background: rgba(37,99,235,0.18);
+      color: var(--text);
     }
 
-    /* top header */
+    .wrap{
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 36px 20px 72px;
+    }
+
     .hero{
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.78);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      padding: 34px 28px;
+      backdrop-filter: blur(12px);
+      border-radius: 30px;
+      padding: 30px 28px;
       position: relative;
       overflow: hidden;
     }
     .hero:before{
       content:"";
       position:absolute;
-      inset:-2px;
-      background: radial-gradient(600px 240px at 30% 20%, rgba(91,124,250,0.18), transparent 70%),
-                  radial-gradient(600px 240px at 80% 20%, rgba(139,92,246,0.14), transparent 70%);
+      inset:-1px;
+      background:
+        radial-gradient(620px 260px at 18% 18%, rgba(37,99,235,0.16), transparent 68%),
+        radial-gradient(520px 220px at 84% 18%, rgba(217,119,6,0.12), transparent 70%);
       pointer-events:none;
-      filter: blur(0px);
+    }
+
+    .hero-inner{
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(290px, 0.8fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 920px){
+      .hero-inner{ grid-template-columns: 1fr; }
     }
 
     .badge{
@@ -84,32 +100,31 @@
       background: rgba(255,255,255,0.75);
       font-size: 13px;
       color: var(--muted);
-      position: relative;
-      z-index: 1;
+      letter-spacing: 0.02em;
     }
     .dot{
-      width: 10px; height: 10px; border-radius: 999px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
       background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 0 0 4px rgba(91,124,250,0.16);
+      box-shadow: 0 0 0 4px rgba(37,99,235,0.10);
     }
 
     h1{
       font-family: var(--serif);
       font-weight: 700;
-      font-size: clamp(28px, 3.4vw, 44px);
-      letter-spacing: -0.02em;
+      font-size: clamp(30px, 3.6vw, 48px);
+      letter-spacing: -0.03em;
       margin: 16px 0 12px;
-      line-height: 1.18;
-      position: relative;
-      z-index: 1;
+      line-height: 1.12;
+      max-width: 14ch;
     }
 
     .subtitle{
       margin: 0 0 18px;
       color: var(--muted);
       font-size: 16px;
-      position: relative;
-      z-index: 1;
+      max-width: 62ch;
     }
 
     .authors{
@@ -117,29 +132,26 @@
       flex-wrap: wrap;
       gap: 10px 14px;
       margin-top: 10px;
-      position: relative;
-      z-index: 1;
     }
     .author{
-      padding: 6px 10px;
+      padding: 7px 12px;
       background: rgba(255,255,255,0.90);
       border: 1px solid var(--line);
       border-radius: 999px;
       font-size: 14px;
       color: var(--text);
-      box-shadow: 0 10px 22px rgba(15,23,42,0.06);
+      box-shadow: 0 10px 18px rgba(20,24,33,0.06);
     }
 
     .note-authors{
       margin-top: 10px;
       color: var(--muted);
       font-size: 13px;
-      position: relative;
-      z-index: 1;
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
+      max-width: 46ch;
     }
     .note-authors .mark{
       display: inline-flex;
@@ -154,15 +166,16 @@
       font-weight: 800;
       color: rgba(15,23,42,0.82);
       font-family: var(--mono);
-      box-shadow: 0 8px 16px rgba(15,23,42,0.06);
+      box-shadow: 0 8px 16px rgba(20,24,33,0.06);
     }
 
     .aff{
       margin-top: 14px;
       color: var(--muted);
-      position: relative;
-      z-index: 1;
       font-size: 14px;
+      display: grid;
+      gap: 4px;
+      max-width: 62ch;
     }
 
     .btns{
@@ -170,8 +183,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      position: relative;
-      z-index: 1;
     }
     .btn{
       display: inline-flex;
@@ -184,7 +195,7 @@
       color: var(--text);
       font-weight: 700;
       font-size: 14px;
-      box-shadow: 0 10px 22px rgba(15,23,42,0.08);
+      box-shadow: 0 10px 22px rgba(20,24,33,0.08);
       transition: transform .08s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
       text-decoration: none;
     }
@@ -196,13 +207,13 @@
       text-decoration: none;
     }
     .btn.primary{
-      background: linear-gradient(135deg, rgba(91,124,250,0.95), rgba(139,92,246,0.92));
-      border-color: rgba(91,124,250,0.25);
+      background: linear-gradient(135deg, rgba(19,78,74,0.95), rgba(37,99,235,0.92));
+      border-color: rgba(19,78,74,0.24);
       color: #ffffff;
     }
     .btn.good{
-      background: linear-gradient(135deg, rgba(34,197,94,0.92), rgba(16,185,129,0.82));
-      border-color: rgba(16,185,129,0.25);
+      background: linear-gradient(135deg, rgba(217,119,6,0.92), rgba(245,158,11,0.84));
+      border-color: rgba(217,119,6,0.24);
       color: #ffffff;
     }
     .btn .icon{
@@ -211,11 +222,89 @@
       letter-spacing: 0.02em;
     }
 
+    .panel{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.70);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 14px 30px rgba(20,24,33,0.06);
+    }
+
+    .panel-title{
+      margin: 0 0 12px;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(20,24,33,0.62);
+    }
+
+    .panel-grid{
+      display: grid;
+      gap: 12px;
+    }
+
+    .panel-item{
+      padding: 14px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(20,24,33,0.08);
+      background: rgba(255,255,255,0.88);
+    }
+
+    .panel-item .kicker{
+      display: block;
+      color: var(--faint);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 4px;
+    }
+
+    .panel-item strong{
+      display: block;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .panel-item p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+    .visit-box{
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(19,78,74,0.08), rgba(37,99,235,0.05));
+      border: 1px solid rgba(19,78,74,0.10);
+    }
+
+    .visit-box .label{
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 6px;
+    }
+
+    .visit-box .url{
+      font-family: var(--mono);
+      font-size: 13px;
+      word-break: break-all;
+      color: rgba(20,24,33,0.88);
+    }
+
+    .visit-box .help{
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     /* sections */
     .grid{
       margin-top: 20px;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.25fr 0.75fr;
       gap: 16px;
     }
     @media (max-width: 920px){
@@ -225,17 +314,17 @@
     .card{
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.78);
-      border-radius: var(--radius);
+      border-radius: 24px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       padding: 18px 18px;
     }
     .card h2{
       margin: 0 0 10px;
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: rgba(15,23,42,0.78);
+      color: rgba(20,24,33,0.72);
     }
     .card p{
       margin: 0 0 10px;
@@ -245,7 +334,7 @@
 
     .teaser{
       width: 100%;
-      border-radius: 14px;
+      border-radius: 18px;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.70);
       overflow: hidden;
@@ -258,7 +347,7 @@
     .teaser img{ width:100%; height:100%; object-fit:cover; display:block; }
     .hint{
       margin-top: 10px;
-      font-size: 12.5px;
+      font-size: 13px;
       color: var(--faint);
     }
 
@@ -271,7 +360,7 @@
     }
     .li{
       padding: 12px 12px;
-      border-radius: 14px;
+      border-radius: 16px;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.85);
     }
@@ -309,45 +398,67 @@
 <body>
   <div class="wrap">
     <header class="hero">
-      <div class="badge"><span class="dot"></span> Aerial Vision-and-Language Navigation</div>
+      <div class="hero-inner">
+        <div>
+          <div class="badge"><span class="dot"></span> Aerial Vision-and-Language Navigation</div>
 
-      <h1>HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation</h1>
+          <h1>HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation</h1>
 
-      <p class="subtitle">
-        CVPR 2026
-      </p>
+          <p class="subtitle">
+            一个更清晰的论文主页版本，重点突出标题、作者、访问入口和浏览方式，方便直接分享给别人打开。
+          </p>
 
-      <div class="authors" aria-label="authors">
-        <!-- 按你截图里的名字写了，你可以自己改 * / † 标记 -->
-        <div class="author">Chengjie Fan *</div>
-        <div class="author">Cong Pan *</div>
-        <div class="author">Zijian Liu</div>
-        <div class="author">Ningzhong Liu</div>
-        <div class="author">Jie Qin †</div>
-      </div>
-      <div class="note-authors">
-        <span class="mark">*</span> Indicates Equal Contribution.
-        <span class="mark">†</span> Corresponding Author.
-      </div>
-      <div class="aff">
-        <div>Nanjing University of Aeronautics and Astronautics, China</div>
-        <div>Key Laboratory of Brain-Machine Intelligence Technology, Ministry of Education, China</div>
-      </div>
+          <div class="authors" aria-label="authors">
+            <div class="author">Chengjie Fan *</div>
+            <div class="author">Cong Pan *</div>
+            <div class="author">Zijian Liu</div>
+            <div class="author">Ningzhong Liu</div>
+            <div class="author">Jie Qin †</div>
+          </div>
+          <div class="note-authors">
+            <span><span class="mark">*</span> Indicates Equal Contribution.</span>
+            <span><span class="mark">†</span> Corresponding Author.</span>
+          </div>
+          <div class="aff">
+            <div>Nanjing University of Aeronautics and Astronautics, China</div>
+            <div>Key Laboratory of Brain-Machine Intelligence Technology, Ministry of Education, China</div>
+          </div>
 
-      <div class="btns">
-        <!-- 把这些链接改成你的真实链接 -->
-        <a class="btn primary" href="#" target="_blank" rel="noreferrer">
-          <span class="icon">PDF</span> Paper
-        </a>
-        <a class="btn good" href="https://github.com/tyrofanfan/HTNav" target="_blank" rel="noreferrer">
-          <span class="icon">GH</span> Code
-        </a>
-        <!-- <a class="btn" href="#" target="_blank" rel="noreferrer">
-          <span class="icon">▶</span> Demo Video
-        </a>
-        <a class="btn" href="#" target="_blank" rel="noreferrer">
-          <span class="icon">DL</span> Dataset / Benchmark
-        </a> -->
+          <div class="btns">
+            <a class="btn primary" href="https://tyrofanfan.github.io/HTNav.github.io/" target="_blank" rel="noreferrer">
+              <span class="icon">WEB</span> Open Site
+            </a>
+            <a class="btn good" href="https://github.com/tyrofanfan/HTNav.github.io" target="_blank" rel="noreferrer">
+              <span class="icon">GH</span> Code
+            </a>
+          </div>
+        </div>
+
+        <div class="panel" aria-label="how to visit">
+          <div class="panel-title">How to View</div>
+          <div class="panel-grid">
+            <div class="panel-item">
+              <span class="kicker">Step 1</span>
+              <strong>打开浏览器</strong>
+              <p>推荐 Chrome、Edge 或 Safari，保证页面排版和图片加载正常。</p>
+            </div>
+            <div class="panel-item">
+              <span class="kicker">Step 2</span>
+              <strong>输入网址</strong>
+              <p>把网址粘贴到地址栏，然后回车访问。</p>
+            </div>
+            <div class="visit-box">
+              <div class="label">Website URL</div>
+              <div class="url">https://tyrofanfan.github.io/HTNav.github.io/</div>
+              <div class="help">如果你是在本地预览，就直接双击打开 index.html。</div>
+            </div>
+            <div class="panel-item">
+              <span class="kicker">Step 3</span>
+              <strong>浏览页面</strong>
+              <p>向下滚动查看摘要、图示和参考信息。</p>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -369,8 +480,6 @@
       <aside class="card">
         <h2>Teaser / Figure</h2>
         <div class="teaser">
-          <!-- 你把图片放到仓库 assets/teaser.png，然后取消注释 img 并删掉下面的提示文本 -->
-          <!-- <img src="assets/teaser.png" alt="HTNav teaser figure"> -->
           <div style="padding: 20px; text-align:center;">
             Put your teaser figure here<br/>
             <span style="color: rgba(15,23,42,0.45); font-size: 13px;">
@@ -388,6 +497,7 @@
         <ul class="list">
           <li class="li"><b>Project page</b><span> — this website</span></li>
           <li class="li"><b>Repository</b><span> — <a href="https://github.com/tyrofanfan/HTNav.github.io" target="_blank" rel="noreferrer">GitHub</a></span></li>
+          <li class="li"><b>Live URL</b><span> — <a href="https://tyrofanfan.github.io/HTNav.github.io/" target="_blank" rel="noreferrer">open in browser</a></span></li>
           <li class="li"><b>Contact</b><span> — your-email@example.com</span></li>
         </ul>
       </aside>
